@@ -1,0 +1,15 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "./sass/hearder-style.scss";
+
+$primary-color: white;
+$bg: black;
+$bg2: rgb(31, 31, 31);
+
+body {
+  background-color: $bg2;
+}
+
+h1 {
+  color: $primary-color;
+  background-color: $bg;
+}
