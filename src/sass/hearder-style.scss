@@ -1,5 +1,13 @@
 header {
     h1 {
         color: gray;
+    };
+
+    ul {
+        display: flex;
+        li {
+            margin: 20px 20px 0 0;
+        }
     }
+
 }
