@@ -1,0 +1,42 @@
+.grid {
+    display: grid;
+    height: 400px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "foto1 foto2 foto2"
+      "foto1 foto3 foto4"
+      "foto5 foto5 foto5";
+    background-color: white;
+
+    .foto1 { 
+        grid-area: foto1;
+        background-image: url('https://i.blogs.es/d93d8d/marvel/1366_2000.jpeg');
+        object-fit: contain;
+    }
+      
+    .foto2 { 
+        grid-area: foto2; 
+        background-image: url('https://as.com/meristation/imagenes/2021/04/26/noticias/1619428263_077178_1619428501_noticia_normal_recorte1.jpg');
+    }
+      
+    .foto3 { 
+        grid-area: foto3;
+        background-image: url('https://media.vandal.net/i/640x360/10-2020/2020102013243495_1.jpg');
+    }
+    
+    .foto4 { 
+        grid-area: foto4;
+        background-image: url('https://i1.wp.com/codigoespagueti.com/wp-content/uploads/2021/06/Estos-son-los-comics-que-inspiraron-la-nueva-obra-de-Marvel-Loki-1.png?fit=1280%2C720&quality=80&ssl=1');
+    }
+    
+    .foto5 { 
+        grid-area: foto5;
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ0wttOnMEfqS3PEMhemSSkE4x9WCO_MiYSA&usqp=CAU');
+    }
+  }
+  
+
+  

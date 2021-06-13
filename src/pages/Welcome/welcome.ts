@@ -1,10 +1,17 @@
-export function renderWelcomePage()
-{
-    const welcome = /* html */ `
-        <section class="welcome">
-            <h1 class="fs-1">Welcome</h1>
-        </section>
-    `;
+import { GridComponent } from "../../components/GridSection/GridComponent";
 
-    return welcome;
+export class WelcomePage {
+
+    renderWelcomePage()
+    {
+        const welcome = /* html */ `
+            <section class="welcome">
+                <h1 class="fs-1">Welcome</h1>
+                <div id="welcome-grid"></div>
+            </section>
+        `;
+        
+        return welcome;
+    }
+
 }

@@ -1,5 +1,10 @@
-import { Header } from "../../components/Header/Header";
+export function renderAboutPage()
+{
+    const about = /* html */ `
+        <section id="about" class="about">
+            <h1 class="fs-1">About</h1>
+        </section>
+    `;
 
-const headerComponent = new Header;
-headerComponent.render();
-
+    return about;
+}
