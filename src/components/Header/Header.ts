@@ -1,3 +1,6 @@
+import { WelcomePage } from "../../pages/Welcome/Welcome";
+import { GridComponent } from "../GridSection/GridComponent";
+
 export class Header {
 
     private title:string;
@@ -33,6 +36,18 @@ export class Header {
         `;
 
         return template;
+    }
+
+    showWelcomePage(welcome: WelcomePage, gridComponent: GridComponent, content: HTMLElement )
+    {
+            content.innerHTML = welcome.renderWelcomePage();
+            gridComponent = new GridComponent;
+            console.log('hola desde header')
+    }
+
+    showContactPage()
+    {
+        const btnContact = document.getElementById('contact')!;
     }
 
 }

@@ -2,6 +2,11 @@ import { GridComponent } from "../../components/GridSection/GridComponent";
 
 export class WelcomePage {
 
+    constructor()
+    {
+        this.renderWelcomePage();
+    }
+
     renderWelcomePage()
     {
         const welcome = /* html */ `
