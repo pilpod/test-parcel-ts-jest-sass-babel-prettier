@@ -42,7 +42,6 @@ export class Header {
     {
             content.innerHTML = welcome.renderWelcomePage();
             gridComponent = new GridComponent;
-            console.log('hola desde header')
     }
 
     showContactPage()

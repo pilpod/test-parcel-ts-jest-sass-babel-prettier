@@ -2,16 +2,19 @@ import { GridComponent } from "../components/GridSection/GridComponent";
 import { Header } from "../components/Header/Header";
 import { WelcomePage } from "../pages/Welcome/Welcome";
 import { renderAboutPage } from "../pages/About/about";
+import { ContactPage } from "../pages/Contact/ContactPage";
 
 export class Controller {
 
     private header: Header;
     private welcome: WelcomePage;
+    private contactPage: ContactPage;
 
     constructor()
     {
         this.header = this.createHeader();
         this.welcome = this.createWelcomePage();
+        this.contactPage = this.createContactPage();
 
         this.render();
     }
@@ -49,12 +52,10 @@ export class Controller {
     contact()
     {
         const btnContact = document.getElementById('contact') as HTMLBodyElement;
-        const content = document.getElementById('content') as HTMLBodyElement;
         
         btnContact.addEventListener('click', () => {
-            content.innerHTML = 'Hello Contact Page';
+            this.contactPage.showContactPage();
         })
-
     }
 
     createHeader()
@@ -65,6 +66,11 @@ export class Controller {
     createWelcomePage()
     {
         return new WelcomePage;
+    }
+
+    createContactPage()
+    {
+        return new ContactPage;
     }
 
 }
