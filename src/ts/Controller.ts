@@ -3,12 +3,17 @@ import { Header } from "../components/Header/Header";
 import { WelcomePage } from "../pages/Welcome/Welcome";
 import { renderAboutPage } from "../pages/About/about";
 import { ContactPage } from "../pages/Contact/ContactPage";
+import { PhotoGalleryPage } from "../pages/PhotoGallery/PhotoGalleryPage";
+import { IRepository } from "../repositories/IRepository";
+import { JsonPlaceholderRepository } from "../repositories/JsonPlaceholderRepository";
 
 export class Controller {
 
     private header: Header;
     private welcome: WelcomePage;
     private contactPage: ContactPage;
+    private photoGalleryPage: PhotoGalleryPage;
+    private repository : IRepository;
 
     constructor()
     {
@@ -16,12 +21,16 @@ export class Controller {
         this.welcome = this.createWelcomePage();
         this.contactPage = this.createContactPage();
 
+        this.repository = new JsonPlaceholderRepository;
+        this.photoGalleryPage = this.createPhotoGalleryPage();
+
         this.render();
     }
 
     render()
     {
         this.index();
+        this.photoGallery();
         this.about();
         this.contact();
     }
@@ -58,6 +67,16 @@ export class Controller {
         })
     }
 
+    photoGallery()
+    {
+        const btnPhotoGallery = document.getElementById('photo-gallery') as HTMLBodyElement;
+
+        btnPhotoGallery.addEventListener('click', () => {
+            console.log('galeria de fotos')
+            this.photoGalleryPage.showPhotoGalleryPage();
+        })
+    }
+
     createHeader()
     {
         return new Header
@@ -71,6 +90,11 @@ export class Controller {
     createContactPage()
     {
         return new ContactPage;
+    }
+
+    createPhotoGalleryPage()
+    {
+        return new PhotoGalleryPage(this.repository);
     }
 
 }

@@ -9,6 +9,6 @@ export class JsonPlaceholderConnection {
 
     async getData() {
         const response = await fetch(this.uri + this.type);
-        return response;
+        return response.json();
     }
 }
