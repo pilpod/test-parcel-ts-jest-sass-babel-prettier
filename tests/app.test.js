@@ -1,7 +1,7 @@
-import { testingJest } from '../src/app';
 
-describe('Testing app', () => {
-    it('function should return hello world', () => {
-        expect( testingJest() ).toBe('Hello World');
+describe('Testing Json Placeholder Repository', () => {
+    it('function should return an array with object', () => {
+
+        expect(  ).toBe('Hello World');
     });
 });
