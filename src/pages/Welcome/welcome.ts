@@ -1,4 +1,3 @@
-import { GridComponent } from "../../components/GridSection/GridComponent";
 
 export class WelcomePage {
 
