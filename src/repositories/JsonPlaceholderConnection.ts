@@ -16,7 +16,7 @@ export class JsonPlaceholderConnection {
         };
 
         const response = await fetch(this.uri + this.type, config);
-        let data : Promise<any> = await response.json();
+        let data = await response.json();
         return data;
     }
 }

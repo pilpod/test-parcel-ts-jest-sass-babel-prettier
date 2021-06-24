@@ -11,8 +11,8 @@ export class PhotoCard {
 
     createCard() {
         let template: string = /* html */ `
-        <div class="card" style="width: 18rem;">
-            <img src="${this.photo.getThumbnailUrl()}" class="card-img-top" alt="${this.photo.getTitle()}">
+        <div class="card mx-3 my-3" style="width: 18rem;">
+            <img src="${this.photo.getUrl()}" class="card-img-top" alt="${this.photo.getId()}">
             <div class="card-body">
                 <p class="card-text">${this.photo.getTitle()}</p>
             </div>

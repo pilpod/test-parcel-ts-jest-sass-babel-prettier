@@ -17,35 +17,37 @@ export class PhotoGalleryPage {
 
     createTemplate()
     {   
-        let cardList = this.createCardList();
 
         const template = /* html */ `
             <section id="photo-gallery-title" class="photo-gallery-title">
                 <h1 class="fs-1">Photo Gallery</h1>
             </section>
-            <section id="photo-list" class="photo-list">
-                ${cardList}
+            <section id="photo-list" class="row row-cols-1 row-cols-md-3 mb-3 photo-list">
+                
             </section>
         `
-
         return template;
     }
 
     showPhotoGalleryPage()
     {   
-        this.repository.getAll();
-
         const content = document.getElementById('content') as HTMLBodyElement;
         content.innerHTML = this.createTemplate();
+        this.createCardList();
     }
 
     createCardList()
-    {
-        let cardList: string[];
+    {   
+        let list = this.repository.getAll();
 
-        let photo = new Photo(1, 1, 'Hola Mundo', 'thumbnail', 'url')
-        let photoCard = new PhotoCard(photo)
-        return photoCard.createCard()
+        let photoList = document.getElementById('photo-list') as HTMLBodyElement;
+
+        for (let index = 0; index < list.length; index++) {
+            let photo = new Photo(list[index].albumId, list[index].id, list[index].title, list[index].thumbnail, list[index].url)
+            let photoCard = new PhotoCard(photo);
+            photoList.innerHTML += photoCard.createCard();
+        }
+
     }
 
 }
