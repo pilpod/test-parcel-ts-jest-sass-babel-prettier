@@ -1,5 +1,5 @@
 export interface IRepository {
 
-    getAll() : Array<Object>;
+    listAll() : void;
 
 }

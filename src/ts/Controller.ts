@@ -72,7 +72,6 @@ export class Controller {
         const btnPhotoGallery = document.getElementById('photo-gallery') as HTMLBodyElement;
 
         btnPhotoGallery.addEventListener('click', () => {
-            console.log('galeria de fotos')
             this.photoGalleryPage.showPhotoGalleryPage();
         })
     }

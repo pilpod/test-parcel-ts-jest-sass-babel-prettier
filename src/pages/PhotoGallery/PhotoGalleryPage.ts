@@ -21,18 +21,15 @@ export class PhotoGalleryPage {
         </section>
         `
 
-        this.getAllPhotos();
-
         return template;
     }
 
     showPhotoGalleryPage()
-    {
+    {   
+        this.repository.listAll();
+
         const content = document.getElementById('content') as HTMLBodyElement;
         content.innerHTML = this.createTemplate();
     }
 
-    getAllPhotos() {
-        this.repository.getAll();
-    }
 }

@@ -3,17 +3,21 @@ import { JsonPlaceholderConnection } from './JsonPlaceholderConnection';
 
 export class JsonPlaceholderRepository implements IRepository {
 
-    private data : JsonPlaceholderConnection;
+    private response : JsonPlaceholderConnection;
+    private data : Array<Object> = [];
 
     constructor() {
-        this.data = new JsonPlaceholderConnection;
+        this.response = new JsonPlaceholderConnection;
     }
 
-    getAll() : Array<Object> {
-
-        this.data.getData().then(data => console.log(data))
-
-        return [{}];
+    listAll() : void {
+        this.response.getData()
+            .then(data => console.log(data))
+            .catch((error) => {
+                console.log(error)
+            })        
     }
+
+
 
 }
