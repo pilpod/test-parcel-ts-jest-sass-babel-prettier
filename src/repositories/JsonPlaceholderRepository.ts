@@ -10,13 +10,15 @@ export class JsonPlaceholderRepository implements IRepository {
         this.response = new JsonPlaceholderConnection;
     }
 
-    listAll() : void {
-        this.response.getData()
+    getAll() : void {
+        this.response.getAllData()
             .then(data => console.log(data))
             .catch((error) => {
                 console.log(error)
-            })        
+            })
     }
+
+    
 
 
 

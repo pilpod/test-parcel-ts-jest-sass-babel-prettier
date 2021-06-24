@@ -7,7 +7,7 @@ export class JsonPlaceholderConnection {
 
     }
 
-    async getData() {
+    async getAllData() {
         const config = {
             method: 'GET',
             headers: {

@@ -1,4 +1,4 @@
-export default class Photo {
+export class Photo {
 
     private albumId : number;
     private id : number;
