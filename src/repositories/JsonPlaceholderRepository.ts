@@ -38,6 +38,11 @@ export class JsonPlaceholderRepository implements IRepository {
         return this.data;
     }
 
+    create(photoData:any): void
+    {
+
+    }
+
 
 
     
