@@ -6,10 +6,12 @@ import { IRepository } from "../../repositories/IRepository";
 export class PhotoGalleryPage {
 
     private repository : IRepository;
+    private formAddPhoto: FormAddPhoto;
 
     constructor( repository : IRepository ) {
         this.repository = repository;
         this.repository.getAll();
+        this.formAddPhoto = new FormAddPhoto(this.repository);
     }
 
     render()
@@ -36,7 +38,7 @@ export class PhotoGalleryPage {
     {   
         const content = document.getElementById('content') as HTMLBodyElement;
         content.innerHTML = this.createTemplate();
-        new FormAddPhoto().render();
+        this.formAddPhoto.render();
         this.createCardList();
     }
 

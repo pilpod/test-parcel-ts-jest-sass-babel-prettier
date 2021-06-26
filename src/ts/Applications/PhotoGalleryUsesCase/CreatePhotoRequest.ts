@@ -1,12 +1,12 @@
 export class CreatePhotoRequest {
 
     private albumId : number;
-    private id : number;
+    private id? : number | undefined;
     private title : string;
-    private thumbnailUrl : string;
+    private thumbnailUrl? : string | undefined;
     private url : string;
 
-    constructor(albumId:number, id: number, title: string, thumbnailUrl: string, url: string)
+    constructor(albumId:number, title: string,  url: string, id?: number | undefined, thumbnailUrl?: string | undefined)
     {
         this.albumId = albumId;
         this.id = id;
@@ -20,7 +20,7 @@ export class CreatePhotoRequest {
         return this.albumId;
     }
 
-    getId() : number
+    getId() : number | undefined
     {
         return this.id;
     }
@@ -30,7 +30,7 @@ export class CreatePhotoRequest {
         return this.title;
     }
 
-    getThumbnailUrl() : string
+    getThumbnailUrl() : string | undefined
     {
         return this.thumbnailUrl;
     }

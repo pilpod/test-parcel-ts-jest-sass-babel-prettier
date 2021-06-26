@@ -1,11 +1,14 @@
+import { IRepository } from "../../repositories/IRepository";
 import { CreatePhotoRequest } from "../../ts/Applications/PhotoGalleryUsesCase/CreatePhotoRequest";
 import { CreatePhotoUseCase } from "../../ts/Applications/PhotoGalleryUsesCase/CreatePhotoUseCase";
 
 export class FormAddPhoto {
 
-    constructor()
+    private repository: IRepository;
+
+    constructor(repository: IRepository)
     {
-        
+        this.repository = repository;
     }
 
     render()
@@ -42,17 +45,19 @@ export class FormAddPhoto {
         const btnAddPhoto = document.getElementById('btn-add-photo') as HTMLBodyElement;
         const formControl = document.getElementsByClassName('form-control') as HTMLCollectionOf<any>;
 
+        let photoValues: any = { "albumId": null, "title": '', "url": '' };
+
         btnAddPhoto.addEventListener('click', (event) => {
             event.preventDefault();
-
-            let photoValues: any = { "albumId": null, "title": '', "url": '' };
 
             for (let index = 0; index < formControl.length; index++) {
                 if(formControl[index].name === 'albumId') { photoValues['albumId'] = formControl[index].value }
                 if(formControl[index].name === 'title') { photoValues['title'] = formControl[index].value }
                 if(formControl[index].name === 'url') { photoValues['url'] = formControl[index].value }
             }
-            
+
+            let request = new CreatePhotoRequest(photoValues["albumId"], photoValues["title"], photoValues["url"]);
+            new CreatePhotoUseCase(this.repository).handle(request);
         })
     }
 

@@ -10,9 +10,9 @@ export class CreatePhotoUseCase {
         this.repository = repository;
     }
 
-    handle( createPhotoRequest: CreatePhotoRequest )
+    handle( request: CreatePhotoRequest )
     {
-        
+        console.log(request)
     }
 
 }
